@@ -30,11 +30,11 @@ sudo chmod +x /usr/local/bin/docker-compose
 5. download CTFd from github
 
 sudo yum install wget -y
-wget -O /tmp/CTFd-v3.1.2.zip https://github.com/CodySchluenz/CTFd/archive/3.1.2.zip
+wget -O /tmp/ctfd-3.1.2.zip https://github.com/CodySchluenz/CTFd/archive/3.1.2.zip
 sudo yum install unzip -y
-unzip /tmp/CTFd-v3.1.2.zip -d /opt/secutil
-rm -f /tmp/CTFd-v3.1.2.zip
-chmod +x /opt/secutil/CTFd-v3.1.2
+unzip /tmp/ctfd-3.1.2.zip -d /opt/secutil
+rm -f /tmp/ctfd-3.1.2.zip
+chmod +x /opt/secutil/ctfd-3.1.2
 -----------------------------------------
 6. create and run portainer stack
 
@@ -43,7 +43,7 @@ docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /va
 -----------------------------------------
 7. create and run CTFd stack
 
-cd /opt/secutil/CTFd-v3.1.2
+cd /opt/secutil/ctfd-3.1.2
 docker-compose up
 -----------------------------------------
 8. log in to portainer and CTFd with EC2 IPv4 Public IP
