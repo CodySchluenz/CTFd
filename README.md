@@ -113,6 +113,6 @@ Brief instructions follow but you can also refer [to a blogpost](https://joshcgr
 
 1. Follow steps 1 to 4 from the previous section.
 2. Setup your DNS records to point to the server where you are starting CTFd.
-3. Get a TLS certificate and private key from a Certificate Authority and save them as `ctfd.crt` and `ctfd.key` respectively in the `ssl` directory in your cloned repository.
+3. Get a TLS certificate and private key from a Certificate Authority and save them as `cert.pem` and `privkey.pem` respectively in the `ssl` directory in your cloned repository.
 4. Edit the `hostname` line in the `docker-compose-production.yml` file to match the hostname you have defined to point to this server.
 5. Run `run-tls.sh` or `docker-compose -f docker-compose.yml -f docker-compose-production.yml up`.
