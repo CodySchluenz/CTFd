@@ -78,3 +78,7 @@ node_modules/
 
 # Flask Profiler files
 flask_profiler.sql
+
+# Codys hidden files
+*.pem
+cf_ctf.yml
