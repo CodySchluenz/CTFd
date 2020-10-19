@@ -1,6 +1,6 @@
 1. start rhel7 ec2 instance in AWS console
 
-ports: 8000, 8000, 9000, 22, 4000?
+ports: 8000, 9000, 22, 4000?
 -----------------------------------------
 2. log in as root user:
 
@@ -20,7 +20,7 @@ yum-config-manager --enable rhel-7-server-rhui-extras-rpms
 
 yum install -y docker-ce docker-ce-cli containerd.io
 #yum list docker-ce --showduplicates | sort -r
-# yum install docker-ce-19.03.13 docker-ce-cli-19.03.13 containerd.io
+#yum install docker-ce-19.03.13 docker-ce-cli-19.03.13 containerd.io
 systemctl start docker
 -----------------------------------------
 4. install docker-compose
@@ -45,7 +45,7 @@ docker-compose up
 7. create and run portainer stack
 
 docker volume create portainer_data
-docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce
+docker run -d -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce
 -----------------------------------------
 8. log in to portainer and CTFd with EC2 IPv4 Public IP
 
@@ -68,5 +68,3 @@ docker rmi Image <REPOSITORY> or docker rmi Image <IMAGE ID>
 
 you should have no repositories left (check with docker images -a).
 you can now run 'docker-compose up' from the directory of the docker-compose.yml file
-
-cat /etc/yum.repos.d/docker-ce.repo
