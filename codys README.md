@@ -56,7 +56,7 @@ portainer:
 	Select docker environment
 	
 CTFd:
-	URL: 54.173.92.28:8000
+	URL: <IpAddress>:8000
 	username: admin
 	password: password
 -----------------------------------------
